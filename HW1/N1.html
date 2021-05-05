@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .mode {
+            text-align: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://shoplineimg.com/5cf4a5bd4956340001e08e0d/60877de9b078e7003e1e30fd/2200x.webp?source_format=jpg');
+        }
+
+        .mode a {
+            color: #000;
+            text-decoration: none;
+            padding: 6px 10px;
+        }
+
+        .mode a:hover {
+            color: rgb(255, 217, 0);
+        }
+
+        .onpost1 img {
+            width: 100%;
+        }
+
+        .onpost img {
+            width: 100%;
+        }
+
+        h1 {
+            margin: 90px 0px 0px;
+            padding-bottom: 30px;
+            color: lightslategrey;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .line {
+            width: 30px;
+            height: 3px;
+            background-color: rgb(255, 217, 0);
+            margin: auto;          
+        }
+        .container {
+            width: 960px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 230px;
+            margin: 5px;
+            border: 2px solid none;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .item .product {
+            margin: 15px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .item .price {
+            margin: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: gold;
+        }
+
+        .item .price1 {
+            margin: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .item del {
+            margin: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: gray;
+            display: block;
+        }
+
+        .page {
+            text-align: center;
+            margin: 50px;
+        }
+
+        .page a {
+            color: #000;
+            text-decoration: none;
+            padding: 6px 10px;
+        }
+
+        .page a:hover {
+            color: red;
+        }
+
+        .line1 {
+            width: 1000px;
+            height: 2px;
+            background-color: #ccc;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        /*  */
+        .img-box {
+            width: 100%;
+            position: relative;
+        }
+
+        .img-box .img {
+            width: 100%;
+        }
+
+        .item .btn-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            transition: .3s;
+        }
+
+        .item:hover .btn-area {
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .item:hover .cart-add {
+            display: block;
+        }
+
+        .cart-add {
+            width: 80%;
+            height: 35px;
+            margin-bottom: 18px;
+            background-color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .5s;
+            display: none;
+        }
+
+        .cart-add:hover {
+            background-color: rgb(255, 217, 0);
+        }
+
+        .footer{
+            
+            width: 960px;
+            display: flex;
+            margin: auto;
+            padding: 40px;
+        }
+        .text1,
+        .text{
+        margin: auto;
+        width: 50%;
+        }
+        .text1 a,
+        .text a{
+        padding: 3px 0px;
+        display: block;
+        text-decoration: none;
+        color: #000;
+        line-height: 1;
+        }
+        .text1 p,
+        .text p{
+        padding: 3px 0px;
+        display: block;
+        font-size: 20px;
+        line-height: 1.5;
+        }
+        .down p{
+            background-color:#eee;
+            padding: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mode">
+        <a href="">首頁</a>
+        <a href="">品牌故事</a>
+        <a href="">所有商品</a>
+        <a href="">居家生活</a>
+        <a href="">玩具公仔</a>
+        <a href="">瑪瑪書店</a>
+        <a href="">手機周邊</a>
+        <a href="">不想運動運動會</a>
+        <a href="">Socles黑漆漆生日館</a>
+    </div>
+    <div class="onpost"><img
+            src="./post/600x (103).png">
+    </div>
+
+    <h1>新品上市</h1>
+    <div class="line"></div>
+    <div class="container">
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (102).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div>
+            <p class="product">黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片</p>
+            <p class="price">NT$277</p>
+            <del>NT$350</del>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (52).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div>           
+            <p class="product">後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (54).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮娃娃機款 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (56).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">SOSO獨家款安全帽</p>
+            <p class="price">NT$999</p>
+            <del>NT$1,200</del>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (58).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">追風阿瑪(夜光版)安全帽</p>
+            <p class="price">NT$2,440</p>
+            <del>NT$2,600</del>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (60).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮歡樂派對安全帽</p>
+            <p class="price">NT$1,800</p>
+            <del>NT$2,000</del>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (62).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">新年送元寶燙金貼紙</p>
+            <p class="price">NT$120</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (64).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">純棉帽T後宮去旅行</p>
+            <p class="price">NT$1,380~NT$1,580</p>
+        </div>
+    </div>
+    <div class="page">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">»</a>
+    </div>
+    <h1>不想運動運動會</h1>
+    <div class="line"></div>
+    <div class="container">
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (66).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮運動會三折運動錢包-黑</p>
+            <p class="price1">NT$990</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (68).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">黃阿瑪打棒球坐姿娃娃8吋</p>
+            <p class="price1">NT$890</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (70).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">黃阿瑪第一棒老帽</p>
+            <p class="price1">NT$790</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (72).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮打不倒棒球隊娃娃</p>
+            <p class="price1">NT$590</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (74).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮MVP純棉運動毛巾</p>
+            <p class="price1">NT$550</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (76).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮棒球隊公仔</p>
+            <p class="price1">NT$490</p>
+
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (78).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮棒球隊公仔-全套7入</p>
+            <p class="price">NT$3100</p>
+            <del>NT$3,400</del>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (80).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">瑪瑪神宮繪馬祈福便利貼</p>
+            <p class="price">NT$160</p>
+        </div>
+    </div>
+    <div class="page">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">»</a>
+    </div>
+    <h1>CreASEnse客制化手機殼</h1>
+    <div class="line"></div>
+    <div class="container">
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (52).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (54).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮娃娃機款 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (82).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮捲捲睡 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (84).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">瑪上招財 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (86).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">阿瑪與三腳 客制化手機殼 (兩款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (88).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">阿瑪貼窗氣噗噗 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (90).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">星際後宮夢遊 客制化手機殼 (四款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (92).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">後宮趴趴小花款 客制化手機殼 (三款材質可選 支援多型號)</p>
+            <p class="price">NT$399~NT$499</p>
+        </div>
+
+    </div>
+    <div class="page">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">»</a>
+    </div>
+
+
+    <h1>聯名寢具</h1>
+    <div class="line"></div>
+    <div class="container">
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (94).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">【HOYACASA聯名系列】抗菌天絲兩用被床包組(單人/雙人/加大)</p>
+            <p class="price">NT$2,980~NT$3,280</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (96).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">【HOYACASA聯名系列】水洗冬被運動系列-藍色(單人/雙人)</p>
+            <p class="price">NT$1,180~NT$1,280</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (98).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">【HOYACASA聯名系列】水洗冬被運動系列-米色(單人/雙人)</p>
+            <p class="price">NT$1,180~NT$1,280</p>
+        </div>
+        <div class="item">
+            <div class="img-box">
+                <img class="img" src="./post/600x (100).png">
+                <div class="btn-area">
+                    <button class="cart-add">加入購物車</button>
+                </div>
+            </div> 
+            <p class="product">【HOYACASA聯名系列】水洗枕運動系列-米色</p>
+            <p class="price">NT$790</p>
+        </div>
+    </div>
+    <div class="page">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">»</a>
+        
+    </div>
+    </div>
+    
+    <div class="line1"></div>
+
+    <footer>
+        <div class="footer">
+        <div class="text">
+            <p>相關資訊</p>          
+            <a href="">品牌故事</a>
+            <a href="">會員招募</a>
+            <a href="">常見問題</a>
+            <a href="">退貨退款須知</a>
+            <a href="">反詐騙公告</a>
+        </div>
+        <div class="text1">
+            <p>聯繫我們</p>
+            <a href="">服務時間：週一至週五 10:00-18:30</a>
+            <a href="">LINE@閒聊區(只有阿瑪在，小幫手不在)</a>
+            <a href="">客服信箱 ：fumeanstore@gmail.com</a>
+            <a href="">授權合作信箱 ：fumeanstudio@gmail.com</a>
+            <a href="">批發合作信箱 ：fumeancats@gmail.com</a>
+        </div>
+    </div>
+    <div class="down">
+        <p>黃阿瑪的後宮生活© 2019 FUMEANCATS .All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+
+</html>
