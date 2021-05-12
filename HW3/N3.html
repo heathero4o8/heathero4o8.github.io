@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body{
+            margin: 100px 0px;
+        }
+        .container{
+            width: 1000px;
+            margin: auto;
+        }
+        .odd{
+            position: relative;
+            bottom: 0px;
+            left: 0px;
+        }
+        .odd .title{
+            width: 350px;
+            color: #fff;
+            
+        }
+        .even{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            top: 0px;
+            right: 0px;
+        }
+        .even .title{
+            width: 350px;
+            color: #fff;
+        }
+        .title h3{
+            font-size: 50px;
+            font-weight: 500;
+            background-color: #bb0404;
+            text-align: right;
+            padding: 38px 10px 0px 0px;
+
+            
+        }
+        .title h4{
+            font-size: 25px;
+            font-weight: 600;
+            background-color: #000;
+            padding: 20px;
+        }
+        .title p{
+            background-color: #000;
+            line-height: 1.5;
+            padding: 0px 20px 50px;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .odd .innovation{
+            width: 680px;
+            background-color: #eee;
+            padding: 20px;
+            line-height: 1.5;
+            margin: 100px;
+        }
+        .even .innovation{
+            width: 680px;
+            background-color: #eee;
+            padding: 20px;
+            line-height: 1.5;
+            margin-top: 130px;
+            margin-bottom: 100px;
+        }
+        .innovation samp{
+            font-size: 20px;
+            font-weight: 700;
+            color:#bb0404;
+        }
+        .innovation samp::after{
+            content: '————————————————————';
+        }
+        .innovation h5{
+            background-color: #000;
+            color: #fff;
+            width: 100px;
+            padding: 4px;
+            font-size: 15px;
+            text-align: center;
+        }
+        .innovation p{
+            color:gray;
+            padding: 4px 10px;
+            font: size 14px;
+            
+            
+        }
+        .innovation p::before{
+            content: ' · ' ;
+            color: #bb0404;
+            margin-left:-10px;
+        }
+        .gary {
+            width: 450px;
+            height: 300px;
+            background-color: #eeeeee;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: -2;
+            position: absolute;
+            top: 40px;
+            left: 550px;
+        }
+        .gary2{
+            width: 500px;
+            height: 400px;
+            background-color: #eee;
+            position: absolute;
+            top: 40px;
+            right: 220px;
+            z-index: -2;
+        }
+        .pic{
+            position: absolute;
+            top: 156px;
+            left: 220px;
+            z-index: -1;
+        }
+        .pic2{
+            position: absolute;
+            top: 156px;
+            right:305px;
+            z-index: -1;
+        }
+        .title3 p{
+            writing-mode: vertical-rl;
+            font-size: 100px;
+            width: 100px;
+            text-align: center;
+            background-color: #bb0404;
+            
+        }
+        .title3{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="odd">
+        <div class="title">
+            <div class="title3">
+                <p>01</p>
+                <h3>操作樂趣</h3>
+            </div>
+            <h4>人人滿意的駕駛體驗</h4>
+            <p>透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨新馳騁的行駛快感。</p>
+            <div class="gary"></div>
+            <div class="pic">
+                <img src="./toyotaImg/video01.png">
+            </div>
+        </div>
+        <div class="innovation">
+            <samp> 因為我們做了這些革新</samp>
+            <h5>低重心設計</h5>
+            <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</p>
+            <h5>車體剛性強化</h5>
+            <p>車身結構採用高牆度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術,大幅增加焊點數量,提升車身抗扭剛性,強化駕馭穩定性及安全性。</p>
+            <h5>四輪獨立懸吊</h5>
+            <p>搭載全新四輪獨立懸吊設定,透過懸吊的高承載強度,保持輪胎抓地力,同時兼顧轉向靈敏度與路感回饋,提升駕馭樂趣</p>
+        </div>
+        </div>
+        <div class="even">
+        <div class="title">
+            <div class="title3">
+                <p>02</p>
+                <h3>安全守護</h3>
+            </div>
+            <h4>行車更安心的高剛性車體</h4>
+            <p>您的愛車會妥善保護您,強悍穩固的車身可使您安全無虞。世界級的安全科技讓你輕鬆自如享受旅程、毫無後顧之憂</p>
+            <div class="gary2"></div>
+            <div class="pic2">
+            <img src="./toyotaImg/advantage-2-video-button-bg.png">
+        </div>
+        </div>
+        <div class="innovation">
+            <samp> 因為我們做了這些革新</samp>
+            <h5>主動安全</h5>
+            <p>以先進的TSS系,路況.輔助駕駛判斷
+                路況並維持行車安全。</p>
+            <h5>被動安全</h5>
+            <p>堅固的高剛性車體,使用熱沖壓材料的高強度抗扭鋼板,強化座艙對意外事故的保護力。</p>
+        </div>
+        </div>
+        <div class="odd">
+            <div class="title">
+                <div class="title3">
+                    <p>03</p>
+                    <h3>操作樂趣</h3>
+                </div>
+                <h4>人人滿意的駕駛體驗</h4>
+                <p>透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨新馳騁的行駛快感。</p>
+                <div class="gary"></div>
+            <div class="pic">
+                <img src="./toyotaImg/advantage-3-video-button-bg.png">
+            </div>
+            </div>
+            <div class="innovation">
+                <samp> 因為我們做了這些革新</samp>
+                <h5>低重心設計</h5>
+                <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</p>
+                <h5>車體剛性強化</h5>
+                <p>車身結構採用高牆度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術,大幅增加焊點數量,提升車身抗扭剛性,強化駕馭穩定性及安全性。</p>
+                <h5>四輪獨立懸吊</h5>
+                <p>搭載全新四輪獨立懸吊設定,透過懸吊的高承載強度,保持輪胎抓地力,同時兼顧轉向靈敏度與路感回饋,提升駕馭樂趣</p>
+            </div>
+            
+            </div>
+    </div>
+</body>
+</html>
