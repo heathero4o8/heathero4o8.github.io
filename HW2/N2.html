@@ -6,218 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
-    <style>
-        /* *{
-            outline: 1px solid red;
-        } */
-        body{
-            padding: 80px 0px 0px 0px;
-        }
-        .header{
-            width: 100%;
-            display: flex;
-            padding: 10px 10px;
-            background: #fff;
-            height: 60px;
-            opacity: .8;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-        .header .logo{
-            display: inline-block;
-            padding: 20px 30px 0px;
-        }
-        .header nav{
-            width: 100%;
-            font-size: 0;
-            text-align: center;
-        }
-        .header nav a{
-            font-size: 20px;
-            color: #000;
-            text-decoration: none;
-            display:inline-block;
-            line-height: 50px;
-            font-weight:bolder;
-            padding: 0px 40px;
-        }
-        .banner img{
-            width: 100%;
-        }
-        .banner2 img{
-            width: 100%;
-            padding: 50px 0px 40px 0px;
-        }
-        .title{
-            width: 960px;
-            margin: auto;
-            vertical-align: baseline;
-            
-        }
-        .title h3{
-            text-align: center;
-            font-size: 70px;
-            font-weight:bold;
-            font-family: sans-serif;
-            margin-bottom: 50px;
-            margin-top: 50px;
-        }
-        .title .about{
-            text-align: center;
-            font-size: 20px;
-            color:gray;
-            font-weight:500;
-            margin-bottom: 150px;
-        }
-        /* 第一個部分 */
-        .info{
-            width: 1000px;
-            display: flex;
-            margin: auto auto 90px;
-        }
-        .info .line-today{
-            display: flex;
-        }
-        .info .today{
-            width: 50%;
-            padding-top: 60px;
-            line-height: 1.5;
-        }
-        .info .today h4{
-            font-size: 40px;
-            font-weight: 800;
-            padding: 20px 0 20px;
-        }
-        .info .today samp{
-            font-size: 20px;
-            font-weight: 800;
-            color:rgb(54, 167, 110);
-            line-height: 2;
-        }
-        .info .today p{
-            font: size 18px;
-            font-weight: 500;
-            color:gray;
-            padding-bottom: 20px;
-            
-        }
-        .info .line-today-pic img{
-        width: 100%;
-        }
-        
-        /* 改====== */
-        .info2{
-            width: 1000px;
-            display: flex;
-            margin: auto auto 90px 190px;
-        }
-        .info2 .line-today{
-            display: flex;
-        }
-        .info2 .today{
-            width: 50%;
-            padding-top: 60px;
-            line-height: 1.5;
-        }
-        .info2 .today h4{
-            font-size: 40px;
-            font-weight: 800;
-            padding: 20px 0 20px;
-        }
-        .info2 .today samp{
-            font-size: 20px;
-            font-weight: 800;
-            color:rgb(54, 167, 110);
-            line-height: 2;
-        }
-        .info2 .today p{
-            font: size 18px;
-            font-weight: 500;
-            color:gray;
-            padding-bottom: 20px;
-            
-        }
-        .info2 .line-today-pic img{
-        width: 100%;
-        }
-
-
-
-
-
-
-
-
-        
-        .container {
-            width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .MessengerAPP{
-            width: 350px;
-            margin: auto;
-            border: 2px solid none;
-            padding-bottom: 10px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-        .img-t {
-            width: 100%;
-            padding-bottom: 30px;
-        }
-        .onlyPc{
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 2;
-            text-align: center;
-        }
-        .onlySp{
-            font-size: 15px;
-            color: gray;
-            line-height: 1.2;
-            text-align: center;
-        }
-        .footer{
-            width: 1200px;
-            padding: 40px;
-            padding-bottom: 60px;
-            
-        }
-        .under{
-            width: 960px;
-            margin-left: 120px;
-            }
-        .under a{
-            text-decoration: none;
-            padding: 0px 0px 0px 20px;
-            color: #000;
-        }
-        .under a::before{
-            content: '|';
-            color: #aaa;
-            padding: 0px 20px 0px 0px;
-        }
-        .line1 {
-            width: 1200px;
-            height: 1px;
-            background-color: #ccc;
-            margin: auto;
-        }
-        .under1 a{
-            text-decoration: none;
-            padding: 0px 0px 0px 20px;
-            color: #000;
-            margin: auto;
-            
-        }
-        .under1{
-            width: 960px;
-            margin-left: 120px;
-            }
-    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style_phone.css">
 </head>
 <body>
     <div class="header">
@@ -235,7 +25,7 @@
         <h3>Life on LINE</h3>
         <p class="about">超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
     </div>
-    <!-- 第一部分 -->
+    
     <div class="info">
     <div class="line-today">
         <div class="today">
@@ -243,78 +33,55 @@
         <h4>LINE TODAY</h4>
         <samp>隨點隨看 生活快充</samp>
         <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
-        <div class="btn-area">
-            <a class="more">其他詳細資訊</a>
-        </div>
+        <div class="more"><a href="#">其他詳細資訊</a></div>
         </div>
         <div class="line-today-pic">
         <img src="./line official/0386be561893eaf8b3f444a3b7206b7a.png">
         </div>
     </div>
-    </div>
-    <!-- 第二部分 -->
-    <div class="info2">
     <div class="line-today">
-        
         <div class="today">
             <img src="./line official/3a0ad7b617ee7a9073af5c949562a000.png" >
             <h4>LINE貼文串</h4>
             <samp>探索樂趣，分享生活</samp>
             <p>在貼文串追蹤你的最愛．有感內容不錯過。打造你的個人閱知頻道，探索生活大小事。分享所見所聞，串連人際、啟發創意的無限可能！</p>
-            <div class="btn-area">
-                <a class="more">其他詳細資訊</a>
-            </div>
+            <div class="more"><a href="#">其他詳細資訊</a></div>
             </div>
             <div class="line-today-pic">
                 <img src="./line official/1bcc8626da1f1f11e331664223c7feba.png">
                 </div>
-        </div>
-        </div>
-        <!-- 第三部分 -->
-    <div class="info">
+    </div>
         <div class="line-today">
             <div class="today">
             <img src="./line official/2cf6df095a14652967eeb0512708e7a7.png" >
             <h4>LINE Pay</h4>
             <samp>隨點隨看付款、轉帳、生活繳費，輕鬆簡單又便利！</samp>
             <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
-            <div class="btn-area">
-                <a class="more">其他詳細資訊</a>
-            </div>
+            <div class="more"><a href="#">其他詳細資訊</a></div>
             </div>
             <div class="line-today-pic">
             <img src="./line official/91f2093486f63cacb05d3f0475e08153.png">
             </div>
         </div>
-    </div>
-            <!-- 第四部分 -->
-    <div class="info2">
         <div class="line-today">
                 <div class="today">
                 <img src="./line official/ab6768bf0847f2800a88be070295a82d.png" >
                 <h4>LINE購物</h4>
                 <samp>先LINE購物再購物</samp>
                 <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS回饋賺不停！</p>
-                    <div class="btn-area">
-                        <a class="more">其他詳細資訊</a>
-                </div>
+                <div class="more"><a href="#">其他詳細資訊</a></div>
                 </div>
                 <div class="line-today-pic">
                     <img src="./line official/43f462d7375cd4867e6cd565756b5ac2.png">
                     </div>
         </div>
-    </div>
-    <!-- 第五部分 -->
-    <div class="info">
         <div class="line-today">
             <div class="today">
             <img src="./line official/3bc668c7fe27caab893e52a09dcb92df.png" >
             <h4>LINE TV</h4>
             <samp>共享追劇生活</samp>
             <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追劇第一選擇！</p>
-            <div class="btn-area">
-                <a class="more">其他詳細資訊</a>
-            </div>
+            <div class="more"><a href="#">其他詳細資訊</a></div>
             </div>
             <div class="line-today-pic">
             <img src="./line official/4d57ad23f14cddc09d91ae3fc10886ae.png">
@@ -367,13 +134,640 @@
     <div class="title">
         <h3>服務總覽</h3>
     </div>
-    <div class="container">
+    <div class="container_services">
+        <div class="MenuWrap">
+            <div class="only"><a href="#">All Product</a></div>
+            <a href="#">通訊</a>
+            <a href="#">娛樂</a>
+            <a href="#">生活</a>
+            <a href="#">購物</a>
+            <a href="#">工具</a>
+            <a href="#">金融</a>
+            <a href="#">企業商務</a>
+            <a href="#">新聞資訊</a>
+            <a href="#">相機</a>
+            <a href="#">Games</a>
+        </div>
+        <div class="servicesWrap">
         <div class="services">
-            <img class="img-h" src="">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
+        </div>
+        <div class="services">
+            <div class="contant">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png">
+                <h5>LINE Messenger</h5>
+                <p>拉近人與人、人與資訊及應用服
+                務間的距離的通訊軟體</p>
+            </div>
+            <div class="overlay">
+                <a href="#">App Stroe</a>
+                <a href="#">Google Play</a>
+            </div>
         </div>
     </div>
     
     
+    
+
+
+
 
 
 <footer>
