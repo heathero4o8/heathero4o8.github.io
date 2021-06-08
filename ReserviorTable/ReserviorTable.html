@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="jumbotron bg-warning">
+    <h1>台灣水庫即時水情</h1>
+  </div>
+
+  <div id="container"></div>
+
+  <script>
+    let Titles = ['項目', '水庫名稱', '有效蓄水量', '剩餘百分比', '昨日上升水量'];
+
+    let Keelung = [1, '新山水庫(基隆)', 901.48, 89.9, 0.44];
+    let Taipei = [2, '翡翠水庫(台北、新北)', 28220.84, 84.1, 1.28];
+    let newTaipei = [3, '石門水庫(新北、桃園、新竹)', 5413.72, 26.7, 5.11];
+    let Miaoli = [4, '永和山水庫(新竹、苗栗)', 464.41, 15.4, 1.69];
+    let Hsinchu = [5, '寶山水庫(新竹)', 128.57, 25.5, 3.12];
+    let Global = [Keelung, Taipei, newTaipei, Miaoli, Hsinchu];
+
+    let container = document.getElementById('container');
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+
+    table.setAttribute("class", "table table-bordered table-striped table-");
+
+    window.onload = function () {
+      createTable(Titles, Global);
+      container.appendChild(table);
+    }
+
+    function createTable(titles, rowsArray) {
+
+      AddRow(thead, titles);
+
+      rowsArray.forEach(function (item) {
+        AddRow(tbody, item);
+      });
+
+    }
+
+
+    function AddRow(target, rowDate) {
+      let _row = document.createElement('tr');
+
+      rowDate.forEach(function (item) {
+        let td = document.createElement('td');
+        let tdText = document.createTextNode(item);
+        td.appendChild(tdText);
+        _row.appendChild(td);
+      });
+
+      target.appendChild(_row);
+      table.appendChild(target);
+    }
+
+
+
+  </script>
+</body>
+
+</html>
