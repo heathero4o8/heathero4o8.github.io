@@ -18,7 +18,7 @@
       background-color: #5b657e;
       margin-top: 50px;
     }
-    .num{
+    .calculate{
       
       font-size: 36px;
     }
@@ -34,7 +34,7 @@
     #del{
       padding-left: 9px;
     }
-    #ans{
+    .ans{
       background-color: #dcdcdc;
       font-size: 38px;
       text-align: end;
@@ -43,15 +43,12 @@
       padding-top: 12px;
       padding-right: 3px;
       color: #37423e;
-      opacity: .5;
     }
     .long{
       width: 93px;
       border-radius: 20px;
       text-align: start;
     }
-
-
   </style>
 </head>
 
@@ -59,33 +56,42 @@
 
   <div class="container">
     <div class="box">
-      <div id="ans"></div>
-      <div class="num">
+      <input class="ans" type="text" disabled>
+      <div class="calculate">
         <button class="btn" id="del">AC</button>
-        <button class="btn" id="PM">±</button>
-        <button class="btn" id="percen">%</button>
+        <button class="btn" id="back">▷</button>
+        <button class="btn" id="apm">±</button>
         <button class="btn" id="division">÷</button><br>
-        <input class="btn" type="button" value="7">
-        <input class="btn" type="button" value="8">
-        <input class="btn" type="button" value="9">
+
+        <input class="btn num" type="button" value="7">
+        <input class="btn num" type="button" value="8">
+        <input class="btn num" type="button" value="9">
         <button class="btn" id="mult">x</button><br>
-        <input class="btn" type="button" value="4">
-        <input class="btn" type="button" value="5">
-        <input class="btn" type="button" value="6">
+
+        <input class="btn num" type="button" value="4">
+        <input class="btn num" type="button" value="5">
+        <input class="btn num" type="button" value="6">
         <button class="btn" id="sub">-</button><br>
-        <input class="btn" type="button" value="1">
-        <input class="btn" type="button" value="2">
-        <input class="btn" type="button" value="3">
+
+        <input class="btn num" type="button" value="1">
+        <input class="btn num" type="button" value="2">
+        <input class="btn num" type="button" value="3">
         <button class="btn" id="add">+</button><br>
-        <input class="btn long" type="button" value="0">
-        <input class="btn" id="decimal" type="button" value=".">
+
+        <input class="btn  num long" type="button" value="0">
+        <input class="btn num" id="decimal" type="button" value=".">
         <button class="btn" id="equal">=</button><br>
       </div>
     </div>
   </div>
 
   <script>
-    let decimal =document.getElementById('')
+    let ans =document.getElementsByClassName('ans');
+    let del =document.getElementById('del');
+    let back =document.getElementById('back');
+
+    let 
+
   </script>
   
 

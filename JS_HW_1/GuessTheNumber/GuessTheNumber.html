@@ -9,36 +9,41 @@
   <link rel="shortcut icon" href="./favicon-20210609051724974.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <style>
-      body{
-        background-color: #e6dfd7;
-      }
-      #head{
-        background-color: #d2c3b0;
-      }
-      .container{
-        border: 2px solid #aaa;
-        border-radius: 4px;
-        width: fit-content;
-        background-color: #fff;
-      }
-      .btn{
-        font-size: 22px;
-        margin: 20px 7px 20px 7px;
-        width: 130px;
-        color: #fff;
-      }
-      .btn:hover{
-        color: #000;
-        font-size: 25px;
-      }
-      span{
-        padding: 4px;
-      }
+  <style>
+    body {
+      background-color: #e6dfd7;
+    }
 
+    #head {
+      background-color: #d2c3b0;
+    }
 
+    .container {
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      width: fit-content;
+      background-color: #fff;
+    }
 
-    </style>
+    .btn {
+      font-size: 22px;
+      margin: 20px 7px 20px 7px;
+      width: 130px;
+      color: #fff;
+    }
+
+    .btn:hover {
+      color: #000;
+      font-size: 25px;
+    }
+
+    span {
+      padding: 4px;
+    }
+    #showInput{
+      font-size: 30px;
+    }
+  </style>
 </head>
 
 <body>
@@ -47,14 +52,127 @@
   </div>
 
   <div class="container">
-    <div class="box">
+    <div class="btnArea">
       <button id="start" type="button" class="btn btn-warning">開始</button>
-      <button id="again" type="button" class="btn btn-secondary">放棄重來</button>
-      <button id="answer" type="button" class="btn btn-danger">看答案</button>
+      <button id="again" type="button" class="btn btn-secondary" disabled>放棄重來</button>
+      <button id="showAnswer" type="button" class="btn btn-danger" disabled>看答案</button>
+      </div>
+
       <div id="showInput"></div>
-      <div class="ans"><span>猜答案</span><input type="text" placeholder="輸入數字" ><button>猜!</button></div>
-    </div>
+
+      <div class="inputArea"><span>猜答案</span>
+        <input id="input" type="text" placeholder="輸入四個不重複數字" maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')"
+          disabled><button id="submit" type="text" disabled>猜!</button>
+      </div>
   </div>
+
+  <script>
+    let btn = document.getElementsByTagName('button');
+
+    let start = document.getElementById('start');
+    let again = document.getElementById('again');
+    let showAnswer = document.getElementById('showAnswer');
+
+    let showInput = document.getElementById('showInput')
+
+    let submit = document.getElementById('submit');
+    let input = document.getElementById('input');
+
+    //看答案
+    showAnswer.addEventListener('click', function () {
+      showInput.innerHTML = '';
+      showInput.innerHTML = `<h5 class="text-center text-secondary">你這沒用的傢伙居然偷看答案...${answer.join('')}</h5>`;
+      btn[3].disabled = true;
+      input.disabled = true;
+    });
+
+
+    //放棄重來
+    again.addEventListener('click', function () {
+      let number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      shuffle(number);
+      answer = number.splice(0, 4);
+      showInput.innerHTML = '';
+      showInput.innerHTML = `<h5 class="text-center text-secondary">太難嗎? 我以為你很聰明...</h5>`;
+      btn[3].disabled = false;
+      input.disabled = false
+      input.value = '';
+    });
+
+    //開始
+    let answer = [];
+    start.addEventListener('click', function () {
+      let number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      shuffle(number);
+      answer = number.splice(0, 4);
+      console.log(answer);
+      btn[0].disabled = true;
+      showInput.innerHTML = `<h5 class="text-secondary">遊戲開始~~輸入0~9任意四個不重複的數字!</h5>`;
+      for (let i = 1; i <= 3; i++) {
+        btn[i].disabled = false;
+      }
+      input.disabled = false;
+    });
+
+    //亂數
+    function shuffle(array) {
+      for (let i = answer.length; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    //猜
+    submit.addEventListener('click', function () {
+      if (input.value.length != 4) {
+        alert('請輸入四個數字');
+      }
+      else {
+
+        let inputArray = input.value.split("");
+        let replyNum = 0;
+        outer:
+        for (let i = 0; i <= 3; i++) {
+          let a = inputArray[i];
+          for (let j = i + 1; j <= 3; j++) {
+            if (a === inputArray[j]) {
+              replyNum++;
+            }
+          }
+        }
+        console.log(replyNum);
+
+        if (replyNum == 0) {
+
+          let A = inputArray.filter((x, index) => x == answer[index]).length;
+          console.log(A);
+
+          let B = inputArray.filter(x => answer.map(x => Number(x)).includes(Number(x))).length;
+          B = B - A
+          
+          console.log(A, B);
+
+          if (A == 4) {
+            showInput.innerHTML += `<span class="fs-2 badge bg-success mb-1 w-25">${A}A${B}B</span>`
+            showInput.innerHTML += `<h3 class="text-center badge bg-success">過關了 哭哭</h3>`
+          }
+          else {
+            showInput.innerHTML += `<span class="badge fs-2 bg-danger mb-1 w-25">${A}A${B}B</span>`
+          }
+
+          input.value = '';
+        }
+        else {
+          alert("你輸入的數字有重複");
+          input.value = '';
+        }
+      }
+
+    });
+
+
+
+  </script>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
