@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/6a1af89718.js" crossorigin="anonymous"></script>
+  <title>買IPHONE</title>
+</head>
+<style>
+  #product_pic {
+    
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #product_pic img {
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row mx-auto">
+      <div class="col-12 text-center">
+        <input class="btn border" type="button" value="IPhone" id="IPhone">
+        <input class="btn border" type="button" value="IPad" id="IPad">
+        <input class="btn border" type="button" value="MacPro" id="MacPro">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div id="product_pic" class="text-center">
+
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="information p-5">
+          <div id="color">
+
+          </div>
+          <div id="type">
+
+          </div>
+          <div id="price">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var Product = [
+      {
+        productName: 'iPhone 11',
+        baseImgUrl: 'https://choujustice.github.io/Fake-Apple/img/iphone11-select-2019-family.png',
+        OutWard: [
+          { color: '黑色', colorValue: '#000000', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/iphone-black.png' },
+          { color: '黃色', colorValue: '#F0E68C', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/iphone-yellow.png' },
+          { color: '紅色', colorValue: '#990036', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/iphone-red.png' },
+        ],
+        Storage: [
+          { size: '64GB', price: 24900 },
+          { size: '128GB', price: 26900 },
+          { size: '256GB', price: 30400 },
+        ]
+      },
+      {
+        productName: 'iPad',
+        baseImgUrl: 'https://choujustice.github.io/Fake-Apple/img/ipad-hero-unselected-201909_GEO_TW.png',
+        OutWard: [
+          { color: '太空灰色', colorValue: '#6e6969', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/ipad-space.png' },
+          { color: '銀色', colorValue: '#b9aeae', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/ipad-silver.png' },
+          { color: '金色', colorValue: '#ceb7a8', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/ipad-gold.png' },
+        ],
+        Storage: [
+          { size: '32GB', price: 10900 },
+          { size: '128GB', price: 13900 },
+        ]
+      },
+      {
+        productName: 'MacPro 13',
+        baseImgUrl: 'https://choujustice.github.io/Fake-Apple/img/mbp13touch-space-gallery1-201907.png',
+        OutWard: [
+          { color: '太空灰色', colorValue: '#6e6969', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/mbp13touch-space.png' },
+          { color: '銀色', colorValue: '#b9aeae', imageUrl: 'https://choujustice.github.io/Fake-Apple/img/mbp13touch-silver.png' },
+        ],
+        Storage: [
+          { size: '256GB', price: 51300 },
+          { size: '512GB', price: 57300 },
+          { size: '1TB', price: 63300 },
+          { size: '2TB', price: 75300 },
+        ]
+      }
+    ];
+
+    let color = document.querySelector('#color');
+    let type = document.querySelector('#type');
+    let price = document.querySelector('#price');
+    let product_pic = document.querySelector('#product_pic');
+    let btn = document.querySelectorAll('.btn');
+
+    btn.forEach((x, index) => {
+      x.addEventListener('click', () => {
+        product_pic.innerHTML = '';
+        color.innerHTML = '';
+        type.innerHTML = '';
+        price.innerHTML = '';
+
+        let img = document.createElement('img');
+        img.setAttribute('src', Product[index].baseImgUrl);
+        img.classList.add('w-75');
+        product_pic.appendChild(img);
+
+
+        //color
+
+        color.innerHTML += '<h3>顏色</h3>'
+        let colorItem = Product[index].OutWard;
+        colorItem.forEach(function (item) {
+          let btn = document.createElement('button');
+          let icon = document.createElement('i');
+          let colortxt = document.createElement('span');
+          btn.classList.add('btn', 'border', 'me-2', 'mx-md-2', 'mb-2');
+          icon.classList.add('fas', 'fa-circle');
+          icon.setAttribute('font-size', '40px');
+          icon.style.color = item.colorValue;
+          colortxt.classList.add('text-center', 'd-block');
+          colortxt.innerHTML = item.color;
+          btn.append(icon, colortxt);
+          color.appendChild(btn);
+          btn.addEventListener('click', function () {
+            img.setAttribute('src', item.imageUrl)
+          })
+        })
+
+        //Storage
+        type.innerHTML += '<h3>規格</h3>'
+        let typeItem = Product[index].Storage;
+        typeItem.forEach(function (e) {
+          let btn = document.createElement('button');
+          let typetxt = document.createElement('span');
+          let pricetxt = document.createElement('span');
+          btn.classList.add('btn', 'border', 'me-2', 'mx-md-2', 'mb-2');
+          typetxt.classList.add('text-center', 'd-block');
+          pricetxt.classList.add('text-center', 'd-block', 'mb-2');
+          typetxt.innerHTML = e.size;
+          pricetxt.innerHTML = `NT$${e.price}`;
+          btn.append(typetxt, pricetxt);
+          type.appendChild(btn);
+          btn.addEventListener('click', function () {
+            price.innerHTML = `<h3>價格</h3>`;
+            price.innerHTML += `<h1><b>NT$${e.price}</b></h1>`
+          })
+
+        })
+
+      })
+
+    })
+
+
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

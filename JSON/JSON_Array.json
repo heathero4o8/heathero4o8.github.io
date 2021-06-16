@@ -1,0 +1,37 @@
+[{
+  "firstname":"Kevin",
+  "height":180,
+  "email":"kevin@gmail.cpm",
+  "city":{
+    "通訊地址":"台北",
+    "戶籍地址":"桃園"
+  },
+  "phone":{
+    "市話":"02-980808080",
+    "行動電話":"0986-79797970"
+  },
+  "cars":[
+    "BMW",
+    "Nissan GT-R",
+    "Audi"
+  ]
+},
+{
+  "firstname":"Mary",
+  "height":168,
+  "email":"mary@gmail.cpm",
+  "city":{
+    "通訊地址":"台北",
+    "戶籍地址":"桃園"
+  },
+  "phone":{
+    "市話":"02-980808080",
+    "行動電話":"0986-79797970"
+  },
+  "cars":[
+    "BMW",
+    "Nissan GT-R",
+    "Audi"
+  ]
+}
+]
