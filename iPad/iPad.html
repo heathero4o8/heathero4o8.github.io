@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- <link data-n-head="ssr" rel="icon" type="image/x-icon"
+    href="https://cdngarenanow-a.akamaihd.net/games/lol/tw/web/media/upload/icons/favicon.ico?version=20200212"> -->
+  <title>Apple</title>
+
+</head>
+
+<body>
+
+  <template id="btn_st">
+    <button>
+      <img class="img" src="" alt="">
+      <h3></h3>
+      <p></p>
+    </button>
+  </template>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="imgArea">
+          <img
+            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=443&hei=535&fmt=jpeg&qlt=95&.v=1599066777000"
+            alt="">
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="txtArea">
+          <h3>購買ipad</h3>
+          <p>外觀</p>
+          <div class="d-flex">
+            <!-- 塞模板 -->
+          </div>
+          <p>儲存空間</p>
+          <div class="d-flex">
+            <!-- 塞模板 -->
+          </div>
+          <p>連線能力</p>
+          <div class="d-flex">
+            <!-- 塞模板 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const url = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPadAir2020_Data.json";
+
+    let ipadArray = []
+    let xhr = new XMLHttpRequest();
+    const circle = ['https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/fnish-spacegray-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422652805',
+      'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422655664',
+      'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000',
+      "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000",
+      "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1599240136000"
+    ]
+    xhr.onload = function () {
+      ipadArray = xhr.responseText;
+      addColor(ipadArray)
+    }
+    xhr.open("GET", url);
+    xhr.send();
+
+    function addColor(array) {
+      let btn_st = document.querySelector("#btn_st");
+      for (let i = 0; i < 5; i++) {
+        let cloneContent = btn_st.content.cloneNode(true);
+        cloneContent.querySelector('.img').setAttribute('src', circle[i]);
+        cloneContent.querySelector('p').innerHTML = array[i].color;
+        console.log(cloneContent.querySelector('.img').setAttribute('src', circle[i]));
+      }
+      document.querySelectorAll('.txtArea .d-flex')[0]
+
+
+
+
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

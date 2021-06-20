@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link data-n-head="ssr" rel="icon" type="image/x-icon"
+    href="https://cdngarenanow-a.akamaihd.net/games/lol/tw/web/media/upload/icons/favicon.ico?version=20200212">
+  <title>LOL英雄聯盟</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+
+    #btnGetJSON {
+      width: 100%;
+      font-size: 23px;
+      margin: 5px 0;
+    }
+
+    .card {
+      border: 1px solid black;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .card-title {
+      color: white;
+      background-color: black;
+      border: 2px solid #ccc;
+      display: inline-block;
+      border-radius: 5px;
+      padding: 5px 15px 5px 15px;
+    }
+
+    .card-text {
+      color: #fff;
+      overflow-y: auto;
+      height: 200px;
+      display: block;
+    }
+
+    .card-text::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    .card-body {
+      background-color: #211813;
+    }
+
+    .card:hover {
+      box-shadow: 8px 8px 15px #808080;
+      transform: translate(5px, 5px);
+    }
+
+    .card:hover img {
+      transform: scale(1.2);
+      transition: transform 0.5s;
+    }
+
+    .card:not(:hover) img {
+      transform: scale(1, 1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover .card-body {
+      background-color: rgba(0, 0, 0, .6) !important;
+    }
+
+    .card:hover .card-title {
+      color: black;
+      background-color: white !important;
+    }
+
+    .showVideo {
+      padding-left: 28px;
+      padding-right: 28px;
+      margin-left: 20px;
+    }
+
+    .modal-content {
+      background-color: #211813;
+    }
+
+    #description {
+      line-height: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <img src="https://img.ttshow.tw/images/media/uploads/2019/10/16/league-of-legends.jpg" class="w-100" alt="">
+    </div>
+    <button type="button" id="btnGetJSON" class="btn btn-secondary">LOL 英雄聯盟API</button>
+    <div class="row">
+      <!-- 這個row[1]是用來跑出下面的template的資料用的 -->
+    </div>
+  </div>
+
+  <template id="cardLOL">
+    <div class="card">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title"></h6>
+        <p class="card-text"></p>
+        <button href="#" class="btn showText btn-primary " data-toggle="modal" data-target="#exampleModal">詳細內容</button>
+        <button href="#" class="btn showVideo btn btn-danger w-auto" data-toggle="modal"
+          data-target="#videoModal">影片</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-2 fw-bolder text-white" id="exampleModalLabel">Modal title</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <img id="heroImage" class="w-100">
+          <h4 id="description" class="text-white"></h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Video -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title  fs-2 fw-bolder text-white" id="exampleModalLabel">Modal title</h4>
+          <button id="videobtnclose" type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <iframe id="iframe" width="560" height="315" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const url = 'https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json';
+
+    window.onload = function () {
+      document.querySelector('#btnGetJSON').addEventListener('click', requestLolJson)
+    }
+    let LoLurl;
+    function requestLolJson() {
+      let xhr = new XMLHttpRequest();
+
+      xhr.onload = function () {
+        LoLurl = JSON.parse(this.responseText);
+        let keys = Object.keys(LoLurl.data);//人物資料
+        let values = Object.values(LoLurl.data);//英文名
+        let row = document.querySelectorAll('.row')[1];
+        let card = document.getElementById('cardLOL');
+        console.log(LoLurl);
+        console.log(keys);
+        console.log(values);
+        console.log(row);
+        console.log(card);
+        keys.forEach(function (keyname, index) {
+          let col = document.createElement('div')
+          col.classList.add('col-md-4', 'col-xl-3', 'col-12');
+          let cloneContent = card.content.cloneNode(true);
+          cloneContent.querySelector('.card');
+          cloneContent.querySelector('h6').innerHTML = `${keyname} <span>${values[index].name}</span>`;
+          cloneContent.querySelector('img').src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${keyname}_0.jpg`;
+          cloneContent.querySelector('p').innerText = `${values[index].blurb}`;
+          //Modal
+          cloneContent.querySelector('.showText').addEventListener('click', function () {
+            let exampleModal = document.querySelector('#exampleModal');
+            exampleModal.querySelector('h4').innerHTML = `${keyname} <span>${values[index].name}</span>`;
+            exampleModal.querySelector('#heroImage').src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${keyname}_1.jpg`;
+            exampleModal.querySelector('#description').innerHTML =
+              `HP:${values[index].stats.hp}<br>
+              Move Speed:${values[index].stats.movespeed}<br>
+              Armor:${values[index].stats.armor}<br>
+              Spell Block:${values[index].stats.spellblock}<br>
+              AttackRange:${values[index].stats.attackrange}<br>`
+          });
+          //Video
+          cloneContent.querySelector('.showVideo').addEventListener('click', function () {
+            let videoModal = document.querySelector('#videoModal');
+            videoModal.querySelector('h4').innerText = `${keyname}'s Video`;
+            videoModal.querySelector('#iframe').src = 'https://www.youtube.com/embed/-86LXC0c2zw';
+
+            document.querySelector('#videobtnclose').onclick = function () {
+              videoModal.querySelector('#iframe').removeAttribute('src');
+            }
+          })
+          col.appendChild(cloneContent);
+          row.append(col);
+        })
+      }
+      xhr.open('GET', url);
+      xhr.send();
+    }
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
