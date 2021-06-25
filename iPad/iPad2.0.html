@@ -11,21 +11,31 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <title>Apple</title>
   <style>
-    .title{
+    .title {
       font-size: 40px;
       margin: 25px 0;
     }
-    .txt{
+
+    .txt {
       font-size: 10px;
       color: #1d1d1f;
     }
-    .itembtn{
-      border: 1px solid #aaa;
+
+    .itembtn {
+      border: 1px solid #ccc;
+      border-radius: 8px;
       margin: 10px 6px;
       padding-left: 18px;
       padding-right: 18px;
+      width: 200px;
+      height: 110px;
     }
-    #price{
+
+    .itembtn:nth-child(odd) {
+      margin-left: 50px;
+    }
+
+    #price {
       font-size: 30px;
       font-weight: 700;
     }
@@ -34,13 +44,12 @@
 
 <body>
   <template id="typeBtn">
-    <button class=" itembtn btn w-25">
-      <img class="w-50" style="padding-top: 20px;" src="" alt="">
+    <button class=" itembtn btn">
+      <img class="w-25" style="padding-top: 20px;" src="" alt="">
       <h3></h3>
       <p class="txt"></p>
     </button>
   </template>
-
 
   <div class="container">
     <div class="row">
@@ -54,22 +63,68 @@
       <div class="col-12 col-md-6">
         <div class="txtArea">
           <h3 class="title">購買iPad&nbsp;Air</h3>
-          <p id="chooseColor" class="font-weight-bold">外觀</p>
-          <div class="d-flex  color">
-            <!-- 塞模板 -->
+          <div class="accordion" id="accordionExample">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <span></span>
+                <button class="btn btn-link btn-block text-right" type="button" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  更改
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <p id="chooseColor" class="font-weight-bold">外觀</p>
+                <div class="color">
+                  <!-- 塞模板 -->
+                </div>
+              </div>
+            </div>
           </div>
-          <p id="chooseStorage" class="font-weight-bold">儲存空間</p>
-          <div class="d-flex storage">
-            <!-- 塞模板 -->
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <span></span>
+                  <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    更改
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p id="chooseStorage" class="font-weight-bold">儲存空間</p>
+                  <div class="d-flex storage">
+                    <!-- 塞模板 -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p id="chooseNetwork" class="font-weight-bold">連線能力</p>
-          <div class="d-flex network">
-            <!-- 塞模板 -->
-          </div>
-          <div id="price">
-
+          <div class="accordion" id="accordionExample"></div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <span></span>
+                <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  更改
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p id="chooseNetwork" class="font-weight-bold">連線能力</p>
+                <div class="d-flex network">
+                  <!-- 塞模板 -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div id="price"></div>
       </div>
     </div>
   </div>
