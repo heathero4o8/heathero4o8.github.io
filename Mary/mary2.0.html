@@ -12,11 +12,24 @@
   <script src="https://kit.fontawesome.com/b3b6b53f83.js" crossorigin="anonymous"></script>
   <title>熊熊跑起來了沒</title>
   <style>
+    body {
+      background-color: #aecad8;
+    }
+
     #title {
       margin: auto;
-      font-size: 30px;
+      font-size: 40px;
       margin-top: 15px;
       margin-bottom: 20px;
+      color: #aaa;
+      letter-spacing: 2px;
+      text-shadow:
+        0 0 5px #d6c3bd,
+        0 0 10px #d6c3bd,
+        0 0 20px #d6c3bd,
+        0 0 40px #d6c3bd;
+      animation: neon-shine 6s linear infinite;
+
     }
 
     .container {
@@ -25,6 +38,8 @@
       padding: 40px;
       padding-left: 80px;
       height: 400px;
+      position: relative;
+
     }
 
     img {
@@ -53,7 +68,7 @@
       text-align: center;
     }
 
-    .btn {
+    #btn {
       border-radius: 50%;
       width: 120px;
       height: 120px;
@@ -63,7 +78,7 @@
 
     .drawArea {
       float: left;
-
+      margin-left: px;
     }
 
     .showArea {
@@ -72,28 +87,32 @@
     }
 
     .a {
-      width: 400px;
+      width: 450px;
       height: 100px;
       background-color: #fdc72f;
       border-radius: 100px 100px 0 0;
+      position: relative;
+      left: -22px;
     }
 
+
     .b {
-      width: 380px;
+      width: 420px;
       height: 80px;
       background-color: #fe552e;
       border-radius: 100px 100px 0 0;
       position: absolute;
       top: 12px;
-      left: 10px;
+      left: -6px;
     }
 
     .b::after {
       content: ' ★ ★ ★ ★ ★';
-      font-size: 50px;
+      font-size: 60px;
       color: #fdc72f;
       position: absolute;
-      left: 55px;
+      left: 50px;
+      top: -7px;
       text-shadow:
         0 0 5px rgba(247, 245, 41, .1),
         0 0 10px rgba(247, 245, 41, 1),
@@ -129,6 +148,43 @@
       height: 25px;
       background-color: #0faac1;
     }
+    .g{
+      width: 40px;
+      height: 65px;
+      background-color: #3a6ea0;
+      position: absolute;
+      right: 70px;
+      bottom: 60px;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius:12px;
+
+    }
+    .h{
+      width: 25px;
+      height: 40px;
+      background-color: #fe552e;
+      position: absolute;
+      right: 45px;
+      bottom: 72px;
+    }
+    .i{
+      width: 20px;
+      height: 110px;
+      background-color: #3a6ea0;
+      position: absolute;
+      right: 29px;
+      bottom: 72px;
+      border-bottom-right-radius:8px;
+    }
+    .j{
+      width: 60px;
+      height: 60px;
+      background-color: #fe552e;
+      border-radius: 100%;
+      position: absolute;
+      right: 9px;
+      top: 100px;
+    }
 
     .show {
       background-color: #234560;
@@ -154,17 +210,57 @@
     #show2 {
       margin: 0 10px;
     }
+
+    .rules {
+      width: 1033px;
+      background-color: darksalmon;
+      padding: 20px 50px 15px 50px;
+      border-radius: 20px;
+      z-index: 1;
+      position: absolute;
+      left: 58px;
+      top: 30px;
+
+    }
+
+    .rules h2 {
+      padding-bottom: 8px;
+      font-size: 50px;
+    }
+
+    .rules p {
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    #btnx {
+      padding: 1px 10px 1px 10px;
+      font-size: 25px;
+      position: absolute;
+      right: -5px;
+      top: -5px;
+    }
   </style>
 
 </head>
 
 <body>
   <header class="d-flex border-bottom">
-    <div id="title" class="alert alert-info">
+    <div id="title" class="alert">
       熊熊很想跑
     </div>
   </header>
   <div class="container">
+
+    <div class="rules">
+      <div class="box">
+        <h2 class="d-flex border-bottom">Rules</h3>
+          <p>
+            歡迎來到熊熊很想跑~~<br>遊戲規則如下:<br>首先點選"Start"遊戲中會自動抽取3次,只要抽中3個不一樣圖案的熊熊就代表贏囉~~如果贏了的話會有獎勵的<br>準備好了嗎?<br>按下"Start"就可以準備抽獎囉!!
+          </p>
+      </div>
+      <button id="btnx" type="button" class="btn btn-danger">X</button>
+    </div>
     <div class="drawArea w-50">
       <!-- 第一個 -->
       <div class="row">
@@ -178,7 +274,7 @@
       <div class="row">
         <div box-id="12" class="col-2"></div>
         <div class="col-4">
-          <button class="btn button btn-warning">Start</button>
+          <button id="btn" class="btn button btn-warning" onclick="close">Start</button>
         </div>
         <div box-id="5" class="col-2"></div>
       </div>
@@ -212,6 +308,10 @@
       </div>
       <div class="e"></div>
       <div class="f"></div>
+      <div class="g"></div>
+      <div class="h"></div>
+      <div class="i"></div>
+      <div class="j"></div>
     </div>
   </div>
 
@@ -279,6 +379,16 @@
     let msgBox = document.querySelector('#show1');
     let msgBox1 = document.querySelector('#show2')
     let msgBox2 = document.querySelector('#show3');
+
+    window.onload = Reset();
+    function Reset() {
+      msgBox.innerHTML = '',
+        msgBox1.innerHTML = '',
+        msgBox2.innerHTML = '',
+        ansArr = [];
+      btn.disabled = false;
+    }
+
     bricks.forEach((x, index) => {
       let id = index + 1;
       let data = brickData.find(x => x.id == id);
@@ -304,9 +414,9 @@
     (function () {
 
       document.querySelector('.button').addEventListener('click', run);
-      
-      
-      
+      btn.onclick = function () {
+        btn.disabled = true;
+      }
       function run() {
         speed = 50;
         let random = Math.floor(Math.random() * brickData.length) + 1;
@@ -364,16 +474,25 @@
       }
       function win() {
         if (ansArr[0] != ansArr[1] && ansArr[1] != ansArr[2] && ansArr[0] != ansArr[2]) {
-          alert('win,恭喜贏得獎勵點選網址拿獎品吧!!\n')
-          ansArr = [];
-
+          alert('win,恭喜贏得獎勵,按下確定領取獎勵吧!!')
+          Response.Write(window.location.href = 'https://external-preview.redd.it/vxPXEGgL4v8mCGw06IFGsmJNtqWQg-z60xQQ79dHKPY.jpg?auto=webp&s=db7685262e9b352a4888e547f52a244e2ea2cb9f');
         }
         else {
           alert('lose,下次再試試手氣吧!!')
+          return Reset();
         }
         setTimeout(location.reload(), 1000)
       }
     })();
+
+    let rules = document.querySelector('.rules');
+    let btnx = document.getElementById('btnx');
+    btnx.onclick = function () {
+      rules.remove(rules);
+    }
+
+
+
 
 
 
