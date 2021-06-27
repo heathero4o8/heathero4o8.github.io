@@ -44,7 +44,7 @@
 
 <body>
   <template id="typeBtn">
-    <button class=" itembtn btn">
+    <button class=" itembtn btn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">
       <img class="w-25" style="padding-top: 20px;" src="" alt="">
       <h3></h3>
       <p class="txt"></p>
@@ -63,68 +63,43 @@
       <div class="col-12 col-md-6">
         <div class="txtArea">
           <h3 class="title">購買iPad&nbsp;Air</h3>
-          <div class="accordion" id="accordionExample">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <span></span>
-                <button class="btn btn-link btn-block text-right" type="button" 
-                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  更改
-                </button>
-              </h2>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                <p id="chooseColor" class="font-weight-bold">外觀</p>
-                <div class="color">
-                  <!-- 塞模板 -->
-                </div>
-              </div>
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Link with href
+          </a>
+          <p id="chooseColor" class="font-weight-bold">外觀</p>
+          <div class="collapse show" id="collapseExample">
+            <div class="color">
+              <!-- 塞模板 -->
             </div>
           </div>
-          <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <span></span>
-                  <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    更改
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p id="chooseStorage" class="font-weight-bold">儲存空間</p>
-                  <div class="d-flex storage">
-                    <!-- 塞模板 -->
-                  </div>
-                </div>
-              </div>
+
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Link with href
+          </a>
+          <p id="chooseStorage" class="font-weight-bold">儲存空間</p>
+          <div class="collapse" id="collapseExample">
+            <div class="d-flex storage">
+              <!-- 塞模板 -->
             </div>
           </div>
-          <div class="accordion" id="accordionExample"></div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <span></span>
-                <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse"
-                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  更改
-                </button>
-              </h2>
+
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Link with href
+          </a>
+          <p id="chooseNetwork" class="font-weight-bold">連線能力</p>
+          <div class="collapse" id="collapseExample2">
+            <div class="d-flex network">
+              <!-- 塞模板 -->
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                <p id="chooseNetwork" class="font-weight-bold">連線能力</p>
-                <div class="d-flex network">
-                  <!-- 塞模板 -->
-                </div>
-              </div>
-            </div>
+          </div>
+
+          <div id="price">
+
           </div>
         </div>
-        <div id="price"></div>
       </div>
     </div>
   </div>
