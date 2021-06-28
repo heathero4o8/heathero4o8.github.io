@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="shortcut icon" href="./favicon-20210628013837983.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/b3b6b53f83.js" crossorigin="anonymous"></script>
+  <title>♥ ♥ ♥ ♥ ♥孟孟的愛♥ ♥ ♥ ♥ ♥</title>
+  <style>
+    #container {
+      width: 500px;
+      height: 500px;
+      background-color: rgba(194, 177, 178, 0.5);
+      margin-top: 10%;
+      margin: 18% auto auto 60px;
+      box-sizing: border-box;
+    }
+
+    #container ul {
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    #container ul li {
+      background-color: wheat;
+      display: block;
+      text-align: center;
+      cursor: default;
+      color: transparent;
+      box-sizing: border-box;
+      border: white 3px solid;
+    }
+
+    .empty {
+      background-color: rgba(255, 246, 246, 0.5) !important;
+    }
+
+    .play {
+      font-size: 20px;
+      margin: 15px 0px 20px 36px;
+      width: 70px;
+    }
+
+    #picOne {
+      position: relative;
+    }
+
+    .wall {
+      width: 600px;
+      height: 600px;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: 10px;
+      position: absolute;
+      z-index: 30;
+      top: -20px;
+      left: 0px;
+      filter: drop-shadow(5px 5px 5px rgba(51, 51, 51, 0.356));
+    }
+
+    [box-id] {
+      border-radius: 10px;
+    }
+
+    [box-id].active {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+      box-shadow: 0 0 30px rgb(241, 205, 0);
+    }
+
+    #run {
+      font-size: 28px;
+      color: #fff;
+      line-height: 1.2;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      position: absolute;
+      right: 40px;
+      top: -100px;
+    }
+
+    #run:hover {
+      font-size: 33px;
+    }
+
+    h3 {
+      font-size: 30px;
+      color: #5b657e;
+      padding-top: 20px;
+      padding-left: 3px;
+    }
+
+    h3:nth-child(1) {
+      color: #8a6d5d;
+      border-bottom: 2px dashed #8a6d5d;
+      ;
+      width: 250px;
+      padding: 0 10px 10px 3px;
+      margin-bottom: 30px;
+    }
+
+    .bg,
+    .banner {
+      position: relative;
+    }
+
+    .sky_bg {
+      width: 1400px;
+      position: absolute;
+      left: -150px;
+      top: -20px;
+    }
+
+    .logo {
+      width: 200px;
+      opacity: .8;
+
+    }
+
+    .logo_bg {
+      width: 190px;
+      position: absolute;
+      top: 30px;
+      z-index: 1;
+    }
+
+    .tlr {
+      margin-left: 45px;
+      margin-top: -15px;
+    }
+    #tip{
+      background-color: #f1e2a9;
+      border: none;
+      color:#8a6d5d;
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 8px;
+    }
+    #reset{
+      background-color: #efece4;
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="banner">
+      <p class="text-center title">
+        <img class="logo_bg" src="./logo.png" alt="">
+        <img class="h-100 logo" src="./watercolor-background.jpg" alt="">
+      </p>
+    </div>
+    <div class="bg">
+      <img class="sky_bg" src="./sky-background.jpg" alt="">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="mt-3 fs-2 fw-bolder">Choose Picture</h3>
+          <div class="row">
+            <div class="col-3" id="picOne"> <img box-id="1" src="./01.jpg" class="w-100 img" alt=""> </div>
+            <div class="col-3 "> <img box-id="2" src="./03.jpg" class="w-100 img" alt=""> </div>
+            <div class="col-3 "> <img box-id="3" src="./02.jpg" class="w-100 img" alt=""> </div>
+            <div class="col-3 "> <img box-id="4" src="./09.jpg" class="w-100 img" alt=""> </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-3"> <img box-id="12" src="./12.jpg" class="w-100 img " alt=""> </div>
+            <div class="col-6"> </div>
+            <div class="col-3"> <img box-id="5" src="./05.jpg" class="w-100 img" alt=""> </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-3"> <img box-id="11" src="./04.jpg" class="w-100 img " alt=""> </div>
+            <div class="col-6 position-relative"> <button id="run" class="btn bg-info">Random<br>selection</button>
+            </div>
+            <div class="col-3"> <img box-id="6" src="./06.jpg" class="w-100 img" alt=""> </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-3"> <img box-id="10" src="./10.jpg" class="w-100 img " alt=""> </div>
+            <div class="col-3"> <img box-id="9" src="./11.jpg" class="w-100 img " alt=""> </div>
+            <div class="col-3"> <img box-id="8" src="./08.jpg" class="w-100 img " alt=""> </div>
+            <div class="col-3"> <img box-id="7" src="./07.jpg" class="w-100 img" alt=""> </div>
+          </div>
+          <h3 class="mt-3 fs-2 fw-bolder">Choose level</h3>
+          <div class="row">
+            <div class="col-4 "> <button data-num="3" class="play btn bg-success" disabled=true>3x3</button> </div>
+            <div class="col-4 "> <button data-num="4" class="play btn bg-warning" disabled=true>4x4</button> </div>
+            <div class="col-4 "> <button data-num="5" class="play btn bg-danger" disabled=true>5x5</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="container" class="">
+            <ul></ul>
+          </div>
+          <div class="col-12 text-center p-5 tlr">
+            <p id="Check_Txt" style="color:red">Times：<span id="Check_i">0hours0ms0s</span></p> <button id="tip"
+              class='btn btn btn-info  w-75'>Let me give you a tip</button> <button id="reset" class='btn btn btn-warning w-75 mt-3'>Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script>
+    let ul = document.querySelector('ul');
+    let btn = document.querySelectorAll('.play');
+    let img = document.querySelectorAll('.img');
+    let tip = document.getElementById('tip');
+    let wallParents = document.querySelector('#picOne')
+    let chgImg;
+    let status = [];//接打亂後的數值
+    let picnum = [];//我的圖片的數字
+    let rowNum = [];//
+    let picArray = []
+    let steps = 0;
+    let allSteps = 0;
+    let currentIndex = 0
+    let speed;
+    let bricks = document.querySelectorAll('[box-id]')
+    bricks = Array.from(bricks).sort((a, b) => {
+      return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value
+    })
+    document.querySelector("#run").addEventListener("click", () => {
+      speed = 50;
+      let random = Math.floor(Math.random() * bricks.length) + 1;
+      steps = random + (2 * bricks.length);
+      allSteps = steps;
+      turnAround();
+    })
+    function turnAround() {
+      bricks[currentIndex].classList.remove("active")
+      currentIndex++
+      if (currentIndex >= bricks.length) currentIndex = 0;
+      bricks[currentIndex].classList.add("active")
+      steps--
+      if (steps > 0) {
+        setTimeout(turnAround, speed)
+        if (steps < Math.floor((allSteps / 3))) speed += 7
+      } else {
+        ul.innerHTML = ''
+        let img = document.createElement('img');
+        img.setAttribute('src', bricks[currentIndex].src);
+        console.log(bricks[currentIndex]);
+        choImg = bricks[currentIndex].src;
+        ul.appendChild(img)
+        if (ul.children.length != 0) {
+          btn.forEach(x => x.disabled = false);
+        }
+      }
+    }
+    btn.forEach(item => {
+      item.addEventListener('click', clickhandler)
+    })
+    img.forEach(x => {
+      x.addEventListener('click', function (e) {
+        ul.innerHTML = '';
+        let img = document.createElement('img');
+        img.setAttribute('src', e.target.src);
+        choImg = e.target.src;
+        ul.appendChild(img);
+        //防呆
+        if (ul.children.length != 0) {
+          btn.forEach(x => x.disabled = false);
+        }
+        bricks.forEach(e => {
+          e.classList.remove("active")
+        })
+      })
+    })
+
+
+
+
+
+
+    function clickhandler() {
+      let wall = document.createElement('img');
+      wall.setAttribute('src', choImg);
+
+      wall.classList.add('wall');
+      wallParents.appendChild(wall);
+      ul.innerHTML = '';
+      rowNum = Number(this.dataset.num);
+      let pic_X = 0, pic_Y = 0;
+      for (let i = 0; i < Math.pow(this.dataset.num, 2); i++) {
+        let temp = 0;
+        while (temp < rowNum) {
+          if (i % rowNum == temp) {
+            pic_X = (100 / (rowNum - 1)) * temp;
+          }
+          if (Math.floor(i / rowNum == temp)) {
+            pic_Y = (100 / (rowNum - 1)) * temp
+          }
+          temp++
+        }
+        picArray.push({ x: pic_X, y: pic_Y })
+        let li = document.createElement('li');
+        li.setAttribute('style',
+          `width:${500 / rowNum}px;
+        height:${500 / rowNum}px;
+        line-height:${500 / rowNum}px;
+        background-position:${pic_X}% ${pic_Y}%;
+        `);
+
+        ul.appendChild(li);
+        picnum.push(i);
+      }
+      let tipOn = true;
+      tip.addEventListener('click', () => {
+        let li = document.querySelectorAll('ul li');
+        if (tipOn) {
+          li.forEach(x => {
+            x.style.color = 'white';
+            x.style.fontSize = '30px';
+            tipOn = false;
+          })
+        }
+        else {
+          li.forEach(x => {
+            x.style.color = 'transparent';
+            x.style.fontSize = '30px';
+            tipOn = true;
+          })
+        }
+      })
+      let allList = document.querySelectorAll(' ul li');
+      start(picnum, allList)
+      move(picnum, allList)
+      btn.forEach((item) => item.disabled = true)
+      setInterval("Check_Time()", 1000)
+    }
+    function shuffle(picnum) {
+      let newArray = [...picnum];
+      for (let i = 0; i < picnum.length; i++) {
+        let random = Math.floor(Math.random() * picnum.length)
+        let temp = newArray[i];
+        newArray[i] = newArray[random];
+        newArray[random] = temp;
+      }
+      return newArray;
+    }
+    function start(picnum, allList) {
+      status = shuffle(picnum)
+      allList.forEach((li, index) => {
+        li.innerText = status[index];
+        li.style.backgroundImage = `url(${choImg})`
+        li.style.backgroundPosition = `${picArray[Number(li.innerText)].x}% ${picArray[Number(li.innerText)].y}%`
+        if (li.innerText == picnum[picnum.length - 1]) {
+          li.classList.add('empty')
+          li.innerText = '';
+          li.style.backgroundImage = "none";
+        }
+      });
+    }
+    //以下要開始移動了~~~~
+    //取得各點位置
+    function getStatus(status, picnum) {
+      let cols = [];//
+      let total = [];
+      for (let i = 0; i < picnum.length; i += rowNum) {
+        cols.push(status.slice(i, i + rowNum));
+      }
+      cols.forEach((row, index) => {
+        row.forEach((x, i) => {
+          if (x == picnum[picnum.length - 1]) {
+            x = '';
+          }
+          total.push({ name: x, row: index, col: i })
+        })
+      })
+      return total;
+    }
+
+    //準備移動它
+    function move(picnum, allList) {
+      allList.forEach(x => {
+        x.addEventListener('click', function (e) {
+          let empty = Array.from(allList).filter(item => item.innerText == '');
+          let choose = getStatus(status, picnum).filter(x => x.name == e.target.innerText);
+          console.log(choose);
+          let limit = getStatus(status, picnum).filter(x => (
+            ((x.row == choose[0].row - 1 || x.row == choose[0].row + 1) && x.col == choose[0].col)) ||
+            ((x.col == choose[0].col - 1 || x.col == choose[0].col + 1) && x.row == choose[0].row))
+          if (!limit.some(x => x.name === "")) return;
+          empty[0].style.backgroundImage = `url(${choImg})`
+          empty[0].innerText = e.target.innerText;
+          empty[0].classList.remove('empty');
+          empty[0].style.backgroundPosition = `${picArray[Number(e.target.innerText)].x}% ${picArray[Number(e.target.innerText)].y}%`
+          e.target.innerText = "";
+          e.target.classList.add('empty');
+          e.target.style.backgroundImage = "none";
+          updateStatus(allList);
+
+
+          //updateStatus(list);
+        })
+      })
+    }
+    //更新位置用
+    function updateStatus(allList) {
+      allList.forEach((x, index) => status[index] = x.innerText)
+    }
+    function win(picnum, allList) {
+      let win = []
+      picNum.forEach((item, index) => {
+        if (item == Number(allList[index].innerHTML)) {
+          win.push(item)
+        }
+        else {
+          return
+        }
+      })
+      console.log(win);
+      console.log(picNum);
+      if (win.length == picNum.length - 1) {
+        alert('win!');
+      }
+    }
+    //時間計時
+    let SetMinute = 0;
+    function Check_Time() {
+      SetMinute += 1;
+      let Check_i = document.getElementById("Check_i");
+      let Cal_Hour = Math.floor(SetMinute / 3600);
+      let Cal_Minute = Math.floor(Math.floor(SetMinute % 3600) / 60);
+      let Cal_Second = SetMinute % 60;
+
+      Check_i.innerHTML = Cal_Hour + "hours" + Cal_Minute + "ms" + Cal_Second + "s";
+    }
+
+    let reset = document.querySelector('#reset');
+    reset.addEventListener('click', function () {
+      location.reload()
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
