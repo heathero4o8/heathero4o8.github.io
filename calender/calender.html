@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>行事曆跑起來了沒</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+
+</head>
+<style>
+  th,
+  tr {
+    width: 14.2857143%;
+  }
+
+  th {
+    text-align: center;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+  }
+
+  td {
+    height: 150px;
+    color: #fff;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+  }
+
+  .today {
+    background-color: rgb(240, 228, 212, .6) !important;
+    color: #645359;
+  }
+
+  body {
+    background-color: #e0d8cb;
+    padding: 50px;
+  }
+
+  .container {
+    padding: 20px;
+    background-color: rgb(241, 205, 136 );
+
+  }
+  .button{
+    position: absolute;
+  }
+
+  #last,
+  #next {
+    font-size: 25px;
+    padding: 0;
+    margin: 20px;
+    width: 80px;
+    opacity: .7;
+    font-family: 'Caveat', cursive;
+    position: absolute;
+    top: 90px;
+  }
+  #next{
+    left: 130px;
+  }
+
+  #last:hover,
+  #next:hover {
+    opacity: 1;
+  }
+
+  #year {
+    font-size: 70px;
+    margin-top: 20px;
+    color: #4b2914;
+    font-family: 'Caveat', cursive;
+  }
+
+  #month {
+    font-family: 'Dancing Script', cursive;
+    font-size: 45px;
+    color: #4b2914;
+    padding: 1px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .pic{
+    position: absolute;
+  }
+
+  img {
+    width: 400px;
+    opacity: .2;
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    z-index: auto;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title text-center">
+          <h3 id="year"></h3>
+          <div class="pic"><img src="./dio.jpg" alt=""></div>
+        </div>
+        <h3 id="month"></h3>
+      </div>
+      <div class="button">
+        <button id="last" class="btn btn-light">last</button>
+        <button id="next" class="btn btn-light">next</button>
+      </div>
+    </div>
+    <table class="table tbale-bordered">
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script>
+    let today = new Date()
+    //找今年的年份
+    let year_num = new Date().getFullYear()
+    let year = document.querySelector('#year')
+    //把年份填入行事曆
+    year.innerText = year_num;
+
+    //找這個月
+    let month_num = new Date().getMonth()
+
+    //把月份帶入陣列並顯示
+    const monthList = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+    let month = document.querySelector('#month')
+    month.innerText = monthList[month_num];
+
+
+    //取得第一天
+    let firstDay = new Date(year_num, month_num, 1).getDay()
+    console.log(firstDay);
+    //某月共有幾天
+    let allday = new Date(year_num, month_num + 1, 0).getDate()
+    console.log(allday);
+    let tds = document.querySelectorAll('td')
+
+    window.onload = function () {
+      createDay()
+      nextMonth()
+      lastMonth()
+    }
+
+    function createDay() {
+      tds.forEach(x => x.innerText = '')
+      firstDay = new Date(year_num, month_num, 1).getDay()
+      allday = new Date(year_num, month_num + 1, 0).getDate()
+      for (let i = 1; i <= allday; i++) {
+        tds[firstDay].innerText = i
+        firstDay++
+      }
+      todayMarker()
+    }
+
+
+    function todayMarker() {
+      tds[(today.getDay())].classList.remove('today')
+      today = new Date()
+      if (year.innerText == today.getFullYear() && monthList[month_num] == monthList[today.getMonth()]) {
+        tds[(today.getDay())].classList.add('today')
+      }
+    }
+
+    function nextMonth() {
+      let next = document.querySelector('#next')
+      next.addEventListener('click', function () {
+        month_num++;
+        if (month_num > 11) {
+          year_num++
+          year.innerText = year_num;
+          month_num = 0
+        }
+        month.innerText = monthList[month_num]
+        createDay()
+      })
+    }
+    function lastMonth() {
+      let last = document.querySelector('#last')
+      last.addEventListener('click', function () {
+        month_num--;
+        if (month_num < 0) {
+          year_num--
+          year.innerText = year_num;
+          month_num = 11;
+        }
+        month.innerText = monthList[month_num]
+        createDay()
+      })
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
